@@ -1,0 +1,36 @@
+.custom-cursor-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cursor-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-accent-orange);
+  color: #ffffff;
+  font-family: var(--font-family-primary);
+  font-weight: var(--font-weight-black);
+  font-size: 14px;
+  text-transform: lowercase;
+  padding: 8px 18px;
+  border-radius: 999px;
+  box-shadow: 0 8px 24px rgba(245, 110, 15, 0.45);
+  letter-spacing: -0.02em;
+  transform: translate(-50%, -50%);
+}
+
+.cursor-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translate(-50%, -50%);
+  filter: drop-shadow(0 4px 12px rgba(245, 110, 15, 0.4));
+}

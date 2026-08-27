@@ -1,0 +1,141 @@
+.intro-section {
+  width: 100%;
+  padding-top: clamp(60px, 8vw, 120px);
+  padding-bottom: clamp(80px, 10vw, 140px);
+  background-color: var(--color-surface-muted);
+  position: relative;
+}
+
+/* Header Row: Headline + Map */
+.intro-header-row {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: clamp(30px, 5vw, 80px);
+  align-items: start;
+  margin-bottom: clamp(60px, 8vw, 100px);
+}
+
+.location-heading {
+  font-family: var(--font-family-primary);
+  font-weight: var(--font-weight-black);
+  font-size: var(--font-size-2xl);
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--letter-spacing-tight);
+  color: var(--color-surface-base);
+}
+
+.highlight-city {
+  color: var(--color-accent-orange);
+}
+
+/* Denmark Map Card */
+.intro-map-col {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.denmark-map-card {
+  width: 100%;
+  max-width: 280px;
+}
+
+.denmark-map-svg {
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.denmark-landmass {
+  transition: fill var(--duration-normal) var(--ease-smooth);
+}
+
+/* Radar Beacon Animation */
+.radar-pulse-ring {
+  fill: var(--color-accent-orange);
+  opacity: 0.35;
+  transform-origin: center;
+  animation: pulseBeacon 2.2s cubic-bezier(0.2, 0.8, 0.4, 1) infinite;
+}
+
+.pin-center-dot {
+  fill: var(--color-accent-orange);
+}
+
+@keyframes pulseBeacon {
+  0% {
+    transform: scale(0.4);
+    opacity: 0.8;
+  }
+  70% {
+    opacity: 0.2;
+  }
+  100% {
+    transform: scale(2.4);
+    opacity: 0;
+  }
+}
+
+/* Scroll-Scrub Manifesto */
+.intro-manifesto-container {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(24px, 3.5vw, 40px);
+  max-width: 1000px;
+  margin-bottom: clamp(60px, 8vw, 100px);
+}
+
+.scrub-paragraph {
+  font-family: var(--font-family-primary);
+  font-weight: var(--font-weight-bold);
+  font-size: clamp(26px, 3.6vw, 44px);
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  color: var(--color-surface-base);
+  margin: 0;
+  will-change: opacity, transform;
+}
+
+/* Contact Block */
+.intro-contact-block {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.contact-prefix {
+  font-family: var(--font-family-primary);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-md);
+  color: var(--color-surface-base);
+  text-transform: lowercase;
+}
+
+.contact-main-link {
+  font-family: var(--font-family-primary);
+  font-weight: var(--font-weight-black);
+  font-size: clamp(28px, 4vw, 48px);
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  color: var(--color-surface-base);
+  display: inline-block;
+  width: fit-content;
+  transition: color var(--duration-fast) var(--ease-smooth), opacity var(--duration-fast) var(--ease-smooth);
+}
+
+.contact-main-link:hover {
+  color: var(--color-accent-orange);
+}
+
+/* Responsive */
+@media (max-width: 809.98px) {
+  .intro-header-row {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .intro-map-col {
+    justify-content: flex-start;
+  }
+  .denmark-map-card {
+    max-width: 200px;
+  }
+}

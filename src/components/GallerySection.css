@@ -1,0 +1,210 @@
+.editorial-gallery {
+  position: relative;
+  width: 100%;
+  padding-top: clamp(60px, 8vw, 120px);
+  padding-bottom: clamp(80px, 10vw, 160px);
+  background-color: var(--color-surface-muted);
+}
+
+.gallery-container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  row-gap: clamp(70px, 10vw, 150px);
+  column-gap: 24px;
+  align-items: center;
+}
+
+/* Asymmetrical Column Alignments */
+.item--left {
+  grid-column: 1 / span 6;
+}
+
+.item--right {
+  grid-column: 7 / span 6;
+}
+
+.item--center-left {
+  grid-column: 2 / span 6;
+}
+
+.item--center-right {
+  grid-column: 6 / span 6;
+}
+
+.item--center {
+  grid-column: 4 / span 6;
+}
+
+/* Gallery Card Button */
+.gallery-card-btn {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+/* Image Wrappers & Hover Zoom */
+.gallery-item .image-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background-color: var(--color-surface-card);
+  border-radius: 2px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 700ms cubic-bezier(0.16, 1, 0.3, 1), filter 700ms ease;
+  will-change: transform;
+}
+
+.gallery-card-btn:hover img {
+  transform: scale(1.04);
+}
+
+/* Caption and Metadata */
+.item-caption {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding-top: 4px;
+}
+
+.item-location {
+  font-family: var(--font-family-primary);
+  font-size: 13px;
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.item-title {
+  font-family: var(--font-family-primary);
+  font-size: 15px;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-surface-base);
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+
+/* Vertical Rotated Typography Interstitials */
+.interstitial--vertical {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-family: var(--font-family-primary);
+  font-weight: var(--font-weight-black);
+  font-size: clamp(20px, 2.5vw, 34px);
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+  color: var(--color-surface-base);
+  white-space: nowrap;
+  grid-column: 6 / span 2;
+  justify-self: center;
+  user-select: none;
+  padding: 20px 0;
+}
+
+.vertical-quote-left {
+  grid-column: 1 / span 2;
+  justify-self: flex-start;
+}
+
+/* Email Vertical Slug */
+.interstitial--vertical-email {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  grid-column: 12 / span 1;
+  justify-self: flex-end;
+  white-space: nowrap;
+  user-select: none;
+}
+
+.email-slug-link {
+  font-family: var(--font-family-primary);
+  font-weight: var(--font-weight-bold);
+  font-size: 16px;
+  letter-spacing: -0.01em;
+  color: var(--color-surface-base);
+  transition: color var(--duration-fast) ease;
+}
+
+.email-slug-link:hover {
+  color: var(--color-accent-orange);
+}
+
+/* Orange Worldwide Callout */
+.interstitial--worldwide {
+  grid-column: 1 / span 8;
+  font-family: var(--font-family-primary);
+  font-weight: var(--font-weight-black);
+  font-size: clamp(28px, 4vw, 56px);
+  line-height: 1.05;
+  color: var(--color-accent-orange);
+  letter-spacing: -0.04em;
+  margin-top: -20px;
+}
+
+/* Horizontal Statement Quote */
+.interstitial--horizontal-quote {
+  grid-column: 7 / span 6;
+  font-family: var(--font-family-primary);
+  font-weight: var(--font-weight-black);
+  font-size: clamp(28px, 3.8vw, 50px);
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+  color: var(--color-surface-base);
+}
+
+/* Responsive Media Queries */
+@media (max-width: 809.98px) {
+  .gallery-container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 54px;
+  }
+  
+  .item--left,
+  .item--right,
+  .item--center-left,
+  .item--center-right,
+  .item--center {
+    width: 100%;
+  }
+
+  .interstitial--vertical,
+  .vertical-quote-left {
+    writing-mode: horizontal-tb;
+    transform: none;
+    white-space: normal;
+    text-align: left;
+    padding: 10px 0;
+    font-size: 24px;
+  }
+
+  .interstitial--vertical-email {
+    writing-mode: horizontal-tb;
+    transform: none;
+    white-space: normal;
+  }
+
+  .interstitial--worldwide {
+    font-size: 32px;
+    margin-top: 0;
+  }
+
+  .interstitial--horizontal-quote {
+    font-size: 30px;
+  }
+}
