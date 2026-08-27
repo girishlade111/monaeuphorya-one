@@ -28,9 +28,10 @@ export default function Hero() {
 
   // Mouse move handler
   const handleMouseMove = (e) => {
+    if (window.matchMedia('(pointer: coarse)').matches) return;
     const { innerWidth, innerHeight } = window;
-    const x = (e.clientX / innerWidth - 0.5) * 2; // -1 to 1
-    const y = (e.clientY / innerHeight - 0.5) * 2;
+    const x = (e.clientX / innerWidth - 0.5) * 25;
+    const y = (e.clientY / innerHeight - 0.5) * 25;
     mouseX.set(x);
     mouseY.set(y);
   };

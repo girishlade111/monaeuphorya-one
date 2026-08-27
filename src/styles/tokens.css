@@ -7,9 +7,9 @@
   --color-surface-translucent: rgba(255, 255, 255, 0.88);
   
   --color-text-primary: #000000;
-  --color-text-secondary: #555555;
-  --color-text-muted: #888888;
-  --color-text-faint: rgba(0, 0, 0, 0.16);
+  --color-text-secondary: #777777;
+  --color-text-muted: #999999;
+  --color-text-faint: rgba(0, 0, 0, 0.18);
   --color-text-inverse: #ffffff;
   
   --color-accent-orange: #f56e0f;      /* Brand Accent (Copenhagen, worldwide, buttons) */
@@ -27,8 +27,9 @@
   --font-size-md: 18px;
   --font-size-lg: 24px;
   --font-size-xl: 36px;
-  --font-size-2xl: clamp(38px, 5vw, 60px);
-  --font-size-hero: clamp(72px, 14vw, 175px);
+  --font-size-2xl: 60px;
+  --font-size-3xl: clamp(64px, 11vw, 140px);
+  --font-size-hero: clamp(76px, 14vw, 185px);
   
   --font-weight-regular: 400;
   --font-weight-medium: 500;
@@ -37,12 +38,13 @@
   --font-weight-black: 900;
 
   --line-height-hero: 0.88;
-  --line-height-tight: 1.05;
+  --line-height-tight: 0.92;
   --line-height-heading: 1.15;
-  --line-height-body: 1.5;
+  --line-height-body: 1.45;
   
   --letter-spacing-hero: -0.05em;
-  --letter-spacing-tight: -0.03em;
+  --letter-spacing-tighter: -0.04em;
+  --letter-spacing-tight: -0.02em;
   --letter-spacing-normal: 0em;
 
   /* Spacing Scale */
@@ -53,22 +55,22 @@
   --space-5: 40px;
   --space-6: 64px;
   --space-7: 96px;
-  --space-8: 140px;
+  --space-8: 128px;
 
   /* Motion & Transitions */
   --ease-framer-spring: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-smooth: cubic-bezier(0.25, 0.1, 0.25, 1);
-  --duration-fast: 180ms;
-  --duration-normal: 350ms;
-  --duration-slow: 700ms;
+  --duration-fast: 200ms;
+  --duration-normal: 400ms;
+  --duration-slow: 750ms;
 
-  /* Layout Breakpoints */
+  /* Breakpoints */
   --breakpoint-mobile: 809.98px;
   --breakpoint-tablet: 1199.98px;
   --breakpoint-desktop: 1200px;
 
-  /* Layout Metrics */
+  /* Header & Navigation Metrics */
   --header-height: 74px;
-  --container-max-width: 1400px;
+  --container-max-width: 1440px;
   --container-padding: clamp(20px, 4vw, 60px);
 }
